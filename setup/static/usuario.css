@@ -70,7 +70,6 @@ input[type='email'] {
 }
 
 input[type='password']{
-    width: 50rem;
     padding: 0.5rem 0.5rem;
     border-radius: 0.5rem;
     margin-left: 10px;
@@ -93,19 +92,38 @@ input[type='password']{
 .login-card-content {
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .login-content {
-    width: 980px;
+    width: 914px;
     height: 480px;
 }
 
 .login-form{
-   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 408px;
+    height: 453px;
+    margin-right: 20px;
 }
 
 .div-img{
-    width:447px;
+    width:460px;
     height: 455px;
+    overflow: hidden;
 }
+
+.btn-login {
+    margin-top: 30px;
+    width: 460px;
+    margin-bottom: 120px;
+}
+
+.img-wallpaper {
+    position: relative;
+    top: -260px;
+}
+

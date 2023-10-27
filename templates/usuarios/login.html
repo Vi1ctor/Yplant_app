@@ -17,7 +17,10 @@
     <link rel="stylesheet" href="{% static 'usuario.css' %}">
 </head>
 
-<body>
+<body style="background: url('{% static 'img/cultura-wallpaper.jpg' %}');
+ background-repeat: no-repeat;
+ background-size: cover;
+ ">
     <div class="initial-page">
         <div class="login-content card">
             {% for message in messages %}
@@ -40,7 +43,10 @@
                         <div class="login-card-content">
                             <div class="login-form">
                                 {% csrf_token %}
-                                <div class="row" style="width: 600px;">
+                                <div class="title-login-form text-center">
+                                    <h3>Yplant</h3>
+                                </div>
+                                <div class="row" style="width: 408px;">
                                     {% for field in form.visible_fields %}
                                     <div class="col-12 col-lg-12" style="margin-bottom: 10px;">
                                         <label for="{{field.id_for_label}}">{{field.label}}</label>
@@ -53,12 +59,14 @@
                                         senha?</a>
 
                                 </div>
-                                <div>
+                                <div class="text-center btn-login">
                                     <button class="btn btn-success col-4" style="padding: top 5px;"
                                         type="submit">Logar</button>
                                 </div>
+                                <p class="link-register">Não possui uma conta? <a href="{% url 'cadastro' %}">Cadastra-se aqui</a></p>
                             </div>
-                            <div class="div-img" style="background-color: rebeccapurple;">
+                            <div class="div-img" style="">
+                                <img class="img-wallpaper" src="{%static 'img/cultura-wallpaper.jpg'%}" alt="imagem-fundo">
                             </div>
                         </div>
                     </form>
