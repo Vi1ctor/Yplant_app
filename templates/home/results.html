@@ -1,0 +1,43 @@
+{% extends 'home/base.html'%}
+{%block content%}
+<div class="container">
+    {% if objeto_classificado %}
+    <!-- <p>{{objeto_classificado}}</p> -->
+    <div class="container">
+        <h1>Resultado de Classificação</h1>
+        <p>A topo de planta recomendado com base nos dados do solo é: {{ objeto_classificado.classification }} </p>
+
+        <div>
+            <h2>Dados da classificação</h2>
+            <table class="table table-bordered table-striped mt-4">
+                <tr>
+                    <th>ID</th>
+                    <th>Nitrogênio</th>
+                    <th>Fósforo</th>
+                    <th>Potássio</th>
+                    <th>PH</th>
+                    <th>Temperatura</th>
+                    <th>Umidade</th>
+                    <th>Precipitação</th>
+                    <th>Tipo de Planta</th>
+                </tr>
+                <tr>
+                    <td>{{ objeto_classificado.id }}</td>
+                    <td>{{ objeto_classificado.nitrogen }}</td>
+                    <td>{{ objeto_classificado.potassium }}</td>
+                    <td>{{ objeto_classificado.calcium }}</td>
+                    <td>{{ objeto_classificado.soil_ph }}</td>
+                    <td>{{ objeto_classificado.temperature }}</td>
+                    <td>{{ objeto_classificado.humidity }}</td>
+                    <td>{{ objeto_classificado.ground_precipitation }}</td>
+                    <td>{{ objeto_classificado.classification }}</td>
+                </tr>
+            </table>
+            {% endif %}
+        </div>
+
+    </div>
+    <h2>Matriz de Confusão</h2>
+    
+</div>
+{%endblock%}

@@ -1,0 +1,56 @@
+{% extends 'home/base.html'%}
+
+{%block content%}
+<div class="mt-4">
+    {% for message in messages %}
+    <div>
+        <p class="alert alert-primary" id="messages">{{message}}</p>
+    </div>
+    {% endfor %}
+    <form method="post" action="{% url 'classify' %}">
+        {% csrf_token %}
+        <div class="row d-flex justify-content-center">
+            <div class="form-group col-2">
+                <label for="n_level text-center">Nível de nitrogênio:</label>
+                {{ form.N }}
+            </div>
+            <div class="form-group col-2">
+                <label for="ph_level text-center">Nível de fósforo:</label>
+                {{ form.P }}
+            </div>
+            <div class="form-group col-2">
+                <label for="k_level text-center">Nível de Potássio:</label>
+                {{ form.K }}
+            </div>
+            <div class="form-group col-2">
+                <label for="temperature text-center">Temperatura:</label>
+                {{ form.temperature }}
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center mt-2">
+            <div class="form-group col-2">
+                <label for="humidity text-center">Umidade:</label>
+                {{ form.humidity }}
+            </div>
+            <div class="form-group col-2">
+                <label for="soil_ph text-center">Ph do solo:</label>
+                {{ form.soil_ph }}
+            </div>
+            <div class="form-group col-2">
+                <label for="rainfall text-center">Precipitação:</label>
+                {{ form.rainfall }}
+            </div>
+            <div class="form-group col-2">
+                <label for="water_per_year text-center">Água disponível por ano:</label>
+                {{ form.water_per_year }}
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center mt-3">
+            <div class="col-6 text-center">
+                <button type="submit" class="btn btn-success button">Classificar</button>
+                <button type="button" class="btn btn-danger button" style="margin-left: 20px;">Limpar campos</button>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

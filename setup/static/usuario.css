@@ -1,0 +1,111 @@
+@import url(//fonts.googleapis.com/css?family=Muli);
+
+#link-login {
+    text-decoration: none;
+}
+
+.nav-link{
+    color: white;
+}
+
+.navbar-brand{
+    color: white;
+}
+
+.button{
+ width: 107px;
+ height: 40px;
+}
+
+.Yplant {
+    margin-left: 10px;
+    margin-top: 0px;
+}
+
+.brand-left{
+    margin-left: 22px;
+}
+
+.active-nav {
+    background-color: #007bff; /* Cor de destaque da aba ativa */
+    color: #fff; /* Cor do texto da aba ativa */
+}
+
+.navbar-nav .nav-item:hover .nav-link {
+    background-color:  #FF5733; /* Cor de fundo ao passar o mouse */
+    color: #fff
+}
+
+  /* Estilo para os links quando eles estiverem ativos (clicados) */
+  .navbar-nav .nav-item.active .nav-link {
+    background-color: #362e2e;  /* Cor de fundo quando clicado */
+    color: #fff; /* Cor do texto quando clicado */
+  }
+
+.navbarCustom {
+    background-color: #4d4141;
+}
+
+.div-buttom {
+    margin-left: 1px;
+}
+
+.card-body-reset{
+    padding-right: 415px;
+    padding-left: 23px;
+    padding-top: 11px
+}
+
+.div-buttom-reset {
+    width: 170px;
+    margin-left: 1px;
+}
+
+input[type='email'] {
+    width: 40rem;
+    padding: 0.5rem 0.5rem;
+    border-radius: 0.5rem;
+    margin-left: 10px;
+    border: 2px solid lightblue;
+}
+
+input[type='password']{
+    width: 50rem;
+    padding: 0.5rem 0.5rem;
+    border-radius: 0.5rem;
+    margin-left: 10px;
+    border: 2px solid lightblue;
+    margin-left: 0px
+}
+
+
+/* login page */
+
+.initial-page{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-card-content {
+    display: flex;
+    flex-direction: row;
+}
+
+.login-content {
+    width: 980px;
+    height: 480px;
+}
+
+.login-form{
+   
+    width: 408px;
+}
+
+.div-img{
+    width:447px;
+    height: 455px;
+}

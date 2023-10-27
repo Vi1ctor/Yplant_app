@@ -1,0 +1,92 @@
+{% extends 'home/base.html'%}
+
+
+{%block content%}
+<div id="content" class="container mt-3">
+    {% for message in messages %}
+    <div>
+        <p class="alert alert-primary" id="messages">{{message}}</p>
+    </div>
+    {% endfor %}
+    <!--  <div class="card border-success"> -->
+    <div class="container">
+        <div class="">
+            <div class="">
+                <form method="GET" action="{% url 'filter' %}">
+                    {% csrf_token %}
+                    <div class="row d-flex justify-content-center mt-2">
+                        <div class="form-group col-2">
+                            <label for="end_date">Nome da planta:</label>
+                            {{ filterForm.plantation_name }}
+                        </div>
+                        <div class="form-group col-2">
+                            <label for="start_date">Data inicial:</label>
+                            {{ filterForm.start_date }}
+                        </div>
+                        <div class="form-group col-1 text-center align-self-center" style="margin-top: 16px;">
+                            <span>Até</span>
+                        </div>
+                        <div class="form-group col-2">
+                            <label for="end_date">Data Final:</label>
+                            {{ filterForm.end_date }}
+                        </div>
+                    </div>
+                    <div class="row d-flex justify-content-center mt-4">
+                        <button type="button" class="btn btn-danger button" style="margin-right: 20px;">Limpar
+                            campos</button>
+                        <button type="submit" class="btn btn-success button">Classificar</button>
+                    </div>
+                </form>
+                <div class="row d-flex justify-content-center mt-4">
+                    <h2 class="text-center">Dados da classificação</h2>
+                    <div id="content" class="container mt-3">
+                        <!-- Se houver resultados, exiba a tabela -->
+                        {% if results %}
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nitrogen</th>
+                                    <th>Potassium</th>
+                                    <th>Calcium</th>
+                                    <th>Temperature</th>
+                                    <th>Humidity</th>
+                                    <th>Soil pH</th>
+                                    <th>Ground Precipitation</th>
+                                    <th>Available Water Annual</th>
+                                    <th>Classification</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for result in results %}
+                                <tr>
+                                    <td>{{ result.id }}</td>
+                                    <td>{{ result.nitrogen }}</td>
+                                    <td>{{ result.potassium }}</td>
+                                    <td>{{ result.calcium }}</td>
+                                    <td>{{ result.temperature }}</td>
+                                    <td>{{ result.humidity }}</td>
+                                    <td>{{ result.soil_ph }}</td>
+                                    <td>{{ result.ground_precipitation }}</td>
+                                    <td>{{ result.available_water_annual }}</td>
+                                    <td>{{ result.classification }}</td>
+                                    <td>
+                                        <a href="{% url 'removeItem' result.id %}">
+                                            <button type="button" class="btn btn-danger">Remover</button>
+                                        </a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                        <!-- Se não houver resultados, exiba uma mensagem -->
+                        {% else %}
+                        <p class="text-center">Nenhum resultado encontrado.</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock%}

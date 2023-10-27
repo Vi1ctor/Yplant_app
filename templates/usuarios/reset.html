@@ -1,0 +1,20 @@
+{% extends 'usuarios/base_resetpassword.html'%}
+{% load static %}
+
+{% block content%}
+
+<div class="card container reset-password-content mt-4">
+    <div class="card-body-reset">
+        <h3>Digite a nova senha</h3>
+
+        <p>Por favor, informe sua nova senha duas vezes para que possamos verificar se você a digitou corretamente.</p>
+        <form class="form" method="POST">
+            {% csrf_token %}
+            {{form}}
+            <div class="row col-2 mt-3 div-buttom-reset">
+                <button type="submit" class="btn btn-success">Alterar minha senha</button>
+            </div>
+        </form>
+    </div>
+</div>
+{%endblock%}
